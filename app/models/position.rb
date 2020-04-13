@@ -3,6 +3,9 @@ class Position < ActiveRecord::Base
   has_many :candidates, through: :applications
   belongs_to :company
 
+  validates :title, :description, :how_to_apply, :position_type, :location, presence: true 
+
+
   #create methods start here
   #search_postions with desired attributes
   def self.search_title(title)
