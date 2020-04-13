@@ -1,0 +1,8 @@
+<ul>
+<% @positions.each do |p| %>
+  <li>
+    <% message = "#{p.title}: #{p.location}" %>
+    <%= link_to message, position_path(p) %>
+  </li>
+<% end %>
+</ul>
