@@ -27,6 +27,7 @@ class PositionsController < ApplicationController
   end
 
   def update
+    position = Position.find(params[:id])
     if position = Position.update(position_params)
       redirect_to position_path(position)
     else
@@ -39,5 +40,5 @@ class PositionsController < ApplicationController
   def position_params
     params.require(:position).permit!
   end
-  
+
 end

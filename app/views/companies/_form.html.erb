@@ -1,0 +1,21 @@
+<% if flash[:errors] %>
+<ul>
+    <% flash[:errors].each do |e| %>
+        <li><%= e %></li>
+    <% end %>
+</ul>
+<% end %>
+
+<%= form_for @company do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :url %>
+    <%= f.text_field :url %><br>
+
+    <%= f.label :company_logo %>
+    <%= f.text_field :company_logo %><br>
+
+    <%= f.submit %>  
+<% end %>
