@@ -1,12 +1,14 @@
 <h4>Company Info</h4>
 
 <% if @company.url %>
-    <p>Name: <a href="#{@company.url}"><%= @company.name %></a></p>
+    <p>Name: <a href="<%= @company.url %>"><%= @company.name %></a></p>
+    
 <% else %>
     <p><%= @company.name %></p>
 <% end %>
 <p>Logo:</p>
-<img src="#{@company.company_logo}" alt="Company logo">
+<img src="<%= @company.company_logo %>" alt="Company logo">
+
 
 <% if !@company.positions.empty? %>
     <p><strong>Positions: </strong></p>
