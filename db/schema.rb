@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_202743) do
+ActiveRecord::Schema.define(version: 2020_04_14_212813) do
 
   create_table "applications", force: :cascade do |t|
     t.integer "position_id"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_202743) do
     t.string "education_level"
     t.string "native_language"
     t.string "second_language"
+    t.string "password_digest"
   end
 
   create_table "companies", force: :cascade do |t|

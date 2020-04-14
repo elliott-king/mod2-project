@@ -1,0 +1,23 @@
+<h3>Login</h3>
+
+<% if flash[:errors] %>
+<ul>
+ <% flash[:errors].each do |e| %>
+  <li><%= e %></li>
+ <% end %>
+</ul>
+<% end %>
+
+<%= form_for :session, url: sessions_path do |f| %>
+
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+
+  <%= f.submit %>
+<% end %>

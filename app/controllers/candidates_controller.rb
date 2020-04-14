@@ -1,4 +1,6 @@
 class CandidatesController < ApplicationController
+  skip_before_action :authorized, only: [:new, :create]
+
   def index
     @candidates = Candidate.all 
   end
@@ -10,6 +12,7 @@ class CandidatesController < ApplicationController
   end
   def create
     candidate = Candidate.create(candidate_params)
+    # byebug
     if candidate.valid? 
       redirect_to candidate_path(candidate)
     else
@@ -37,6 +40,6 @@ class CandidatesController < ApplicationController
 
   private
   def candidate_params
-  params.require(:candidate).permit(Candidate.column_names)
+  params.require(:candidate).permit(Candidate.column_names, :password)
   end
 end
