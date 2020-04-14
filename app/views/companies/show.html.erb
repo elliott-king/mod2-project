@@ -6,8 +6,11 @@
 <% else %>
     <p><%= @company.name %></p>
 <% end %>
-<p>Logo:</p>
-<img src="<%= @company.company_logo %>" alt="Company logo">
+
+<% if @company.company_logo %>
+    <p>Logo:</p>
+    <img src="<%= @company.company_logo %>" alt="Company logo">
+<% end %>
 
 
 <% if !@company.positions.empty? %>
