@@ -1,0 +1,26 @@
+<h4>Company Info</h4>
+
+<% if @company.url %>
+    <p>Name: <a href="<%= @company.url %>"><%= @company.name %></a></p>
+    
+<% else %>
+    <p><%= @company.name %></p>
+<% end %>
+
+<% if @company.company_logo %>
+    <p>Logo:</p>
+    <img src="<%= @company.company_logo %>" alt="Company logo">
+<% end %>
+
+
+<% if !@company.positions.empty? %>
+    <p><strong>Positions: </strong></p>
+    <% @company.positions.each do |p| %>
+        <ul>
+            <li><%= link_to p.title, position_path(p) %>
+        </ul>
+    <% end %>
+<% end %>
+
+<%= link_to 'Back to company list', companies_path %>
+

@@ -3,6 +3,11 @@
 <h4>Title</h4>
 <%= @position.title %>
 <br>
+
+<h4>Company</h4>
+<%= link_to @position.company.name, company_path(@position.company) %>
+<br>
+
 <h4>Location</h4>
 <%= @position.location %>
 <br>
@@ -13,9 +18,11 @@
 <%= @position.description %>
 <br>
 <h4>Url</h4>
-<%= @position.url %>
+<a href="#{@position.url}"><%= @position.url %></a>
 <br>
 <h4>Apply at</h4>
-<%= @position.how_to_apply %>
+<a href="#{@position.how_to_apply}"><%= @position.how_to_apply %></a>
+<br>
+
 <br>
 <%# TODO: add company info%>
