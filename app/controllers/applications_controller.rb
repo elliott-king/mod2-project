@@ -4,6 +4,8 @@ class ApplicationsController < ApplicationController
   end
   def new
     @application = Application.new 
+    @candidates = Candidate.all 
+    @positions = Position.all
   end
   def create
     application = Application.create(application_params)
