@@ -13,6 +13,7 @@ require "open-uri"
 Position.destroy_all
 Candidate.destroy_all
 Company.destroy_all
+Application.destroy_all
 
 class GithubAPI
   def self.seed_positions(data)
@@ -90,3 +91,9 @@ elliott = Candidate.new(name: 'Elliott', gpa: 5.0, education_level: 'bachelor', 
 brett = Candidate.new(name: 'Brett', gpa: 2.99, education_level: 'master', native_language: 'French', second_language: 'English').save 
 
 
+# Seed an application for each candidate
+start_id = Position.first.id
+Candidate.all.each do |candidate| 
+  Application.create(candidate: candidate, position: Position.find(start_id))
+  start_id += 1
+end
