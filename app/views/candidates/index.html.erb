@@ -1,0 +1,12 @@
+<h1>Candidates</h1>
+
+<ul>
+<% @candidates.each do |candidate| %>
+  <li>
+  <%= link_to candidate.name, candidate_path(candidate) %>
+  </li>
+<% end %>
+</ul>
+
+<%= link_to 'Positions', positions_path %>
+<%# todo: <%= link_to 'Companies', companies_path %>

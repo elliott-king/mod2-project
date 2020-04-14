@@ -1,0 +1,10 @@
+<h1><%= @candidate.name %></h1>
+<p><%= @candidate.education_level%> <%= @candidate.gpa %></p>
+<br>
+<h4>Languages:</h4>
+<p><%= @candidate.native_language %></p>
+<p><%= @candidate.second_language %></p>
+
+<%# todo: limit depending on login %>
+<%= link_to 'Edit Candidate', edit_candidate_path %>
+<%= render 'home'%>
