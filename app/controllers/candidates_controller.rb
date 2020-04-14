@@ -30,7 +30,10 @@ class CandidatesController < ApplicationController
       redirect_to edit_candidate_path(candidate)
     end
   end
-  # todo: delete
+  def destroy
+    candidate = Candidate.find(params[:id])
+    candidate.destroy
+  end
 
   private
   def candidate_params

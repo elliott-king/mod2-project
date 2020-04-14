@@ -16,5 +16,7 @@
 <%# todo: limit depending on login %>
 <%= link_to 'Edit Candidate', edit_candidate_path %>
 <br>
+<%= button_to 'Delete Candidate', {controller: :candidates, action: 'destroy', id: @candidate.id}, method: :delete %>
+<br>
 <%= link_to 'New Application', new_application_path %>
 <%= render 'home'%>
