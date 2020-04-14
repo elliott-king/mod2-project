@@ -16,23 +16,10 @@ class ApplicationsController < ApplicationController
       redirect_to new_application_path
     end
   end
-  def edit
-    @application = Application.find(params[:id])
-  end
-  def update
-    application = Application.find(params[:id])
-    application.update(application_params)
-    if application.valid?
-      redirect_to application_path(application)
-    else
-      flash[:errors] = application.errors.full_messages
-      redirect_to edit_application_path(application)
-    end
-  end
-  # todo: delete
+  # todo: delete, maybe edit?
 
   private
   def application_params
-  params.require(:application).permit(Application.column_names)
+  params.require(:application).permit(:candidate_id, :position_id)
   end
 end
