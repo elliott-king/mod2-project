@@ -1,0 +1,20 @@
+<% if flash[:errors] %>
+<ul>
+    <% flash[:errors].each do |e| %>
+        <li><%= e %></li>
+    <% end %>
+</ul>
+<% end %>
+
+<%= form_for @application do |f| %>
+
+  <%= f.label :candidate %>
+  <%= f.collection_select :candidate_id, @candidates, :id, :name %>
+  <br>
+
+  <%= f.label :position %>
+  <%= f.collection_select :position_id, @positions, :id, :title %>
+  <br>
+  <%= f.submit %>
+
+<% end %>

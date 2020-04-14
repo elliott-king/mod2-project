@@ -1,0 +1,29 @@
+<% if flash[:errors] %>
+<ul>
+    <% flash[:errors].each do |e| %>
+        <li><%= e %></li>
+    <% end %>
+</ul>
+<% end %>
+
+<%= form_for @candidate do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :education_level %>
+  <%= f.text_field :education_level %><br>
+
+  <%= f.label :gpa %>
+  <%= f.number_field :gpa, step: :any %><br>
+
+  <%= f.label :native_language %>
+  <%= f.text_field :native_language %><br>
+
+  <%= f.label :second_language %>
+  <%= f.text_field :second_language %><br>
+
+  <%= f.submit %>
+
+<% end %>
+

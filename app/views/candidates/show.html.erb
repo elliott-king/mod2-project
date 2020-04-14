@@ -1,0 +1,22 @@
+<h1><%= @candidate.name %></h1>
+<p><%= @candidate.education_level%> <%= @candidate.gpa %></p>
+<br>
+<h4>Languages:</h4>
+<p><%= @candidate.native_language %></p>
+<p><%= @candidate.second_language %></p>
+<br>
+<h4>Applications:</h4>
+<% @candidate.applications.each do |app| %>
+  <p>
+  <%= link_to app.position.title, application_path(app) %>
+  </p>
+<% end %>
+<br>
+
+<%# todo: limit depending on login %>
+<%= link_to 'Edit Candidate', edit_candidate_path %>
+<br>
+<%= button_to 'Delete Candidate', {controller: :candidates, action: 'destroy', id: @candidate.id}, method: :delete %>
+<br>
+<%= link_to 'New Application', new_application_path %>
+<%= render 'home'%>
