@@ -13,9 +13,11 @@
 <%= @position.description %>
 <br>
 <h4>Url</h4>
-<%= @position.url %>
+<a href="#{@position.url}"><%= @position.url %></a>
 <br>
 <h4>Apply at</h4>
-<%= @position.how_to_apply %>
+<a href="#{@position.how_to_apply}"><%= @position.how_to_apply %></a>
 <br>
+<br>
+<%= link_to "Back to list", positions_path %>
 <%# TODO: add company info%>
