@@ -15,9 +15,119 @@
  */
 
 body {
-    background-image: url("https://www.solidbackgrounds.com/images/2560x1440/2560x1440-light-blue-solid-color-background.jpg");
+    background-image: url("https://www.solidbackgrounds.com/images/950x350/950x350-white-smoke-solid-color-background.jpg");
 }
 
+.index-img {
+    max-width: 200px;
+}
+  
+.show-img {
+    max-width: 50%;
+    padding: 25px;
+    border-radius: 25px;
+    background-color: rgba(132, 92, 160, 0.4);
+  
+}
+  
+img {
+    max-width: 100%;
+}
+  
+.index-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-around;
+    justify-content: center;
+    text-align: center;
+    /* max-width: 90%; */
+    margin: 0px auto;
+    /* padding: 15px; */
+    max-width: 960px;
+    padding: 2.25%; 
+    width: 85%;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+  
+.index-tile {
+    max-width: 200px;
+    border-radius: 25px;
+    padding: 20px;
+    margin: 10px;
+    /* background-color: lightgrey; */
+    background-color: rgba(156, 201, 228, 0.4);
+}
+  
+.show-body, form, h1, ol {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    margin: 0px auto;
+    margin-bottom: 10px;
+    max-width: 960px;
+    padding: 2.25%; 
+    width: 85%;
+  
+     /* font-family: molle; */
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 20px;
+}
+  
+form {
+    margin-top: 20px
+}
+  
+input {
+    margin: 10px 0px;
+}
+  
+  
+  /* nvaigation bar */
+ul li {
+    display: inline-block;
+    padding: 20px;
+    color: black;
+}
+
+#navi li {
+    display: inline-block;
+    padding: 20px;
+    color: black;
+}
+  
+li:hover {
+  background-color: rgba(132, 92, 160, 0.4);
+  transition-duration: 1s;
+}
+  
+ul {
+    background-color: rgba(255, 255, 255, 0.7);
+  
+    margin: 0px auto;
+    margin-bottom: 10px;
+    width: 960px;
+    /* padding: 1.25%;  */
+    width: 900px;
+    
+    /* font-family: molle; */
+    /* text-align: center; */
+    vertical-align: middle;
+    border-radius: 20px;
+}
+  
+a {
+    text-decoration: none;
+    color: black
+}
+  
 .right {
     float: right;
+}
+
+.banner {
+    background-image: url("https://i.pinimg.com/474x/b7/61/18/b76118e01b0b59798df71968ddbe7ebf.jpg");
+    width:100%;
+    min-height:100px;
+    margin: 0px;
 }
