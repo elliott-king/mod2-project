@@ -1,3 +1,7 @@
 <%# link to position as well%>
-<p><%= link_to @application.candidate.name, candidate_path(@application.candidate) %> is applying to <%= @application.position.title %></p>
+<p>
+  <%= link_to @application.candidate.name, candidate_path(@application.candidate) %>
+   is applying to 
+   <%= link_to @application.position.title, position_path(@application.position) %>
+</p>
 <p>Application status: <%= @application.submitted ? "Submitted" : "Not Submitted"%></p>

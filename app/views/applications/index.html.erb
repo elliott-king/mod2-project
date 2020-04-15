@@ -1,0 +1,9 @@
+<h1>Your Applications</h1>
+
+<ul>
+<% @applications.each do |app| %>
+  <li><%= link_to app.position.title, application_path(app) %></li>
+<% end %>
+</ul>
+
+<%= button_to 'New Application', {controller: :applications, action: 'new'}, method: :get %>

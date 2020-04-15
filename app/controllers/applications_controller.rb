@@ -1,6 +1,9 @@
 class ApplicationsController < ApplicationController
-
   before_action :candidate_match, only: [:show, :edit, :destroy, :update]
+
+  def index
+    @applications = Application.where(candidate_id: current_candidate.id)
+  end
 
   def show
     @application = Application.find(params[:id])
@@ -19,7 +22,6 @@ class ApplicationsController < ApplicationController
       redirect_to new_application_path
     end
   end
-  # todo: delete, maybe edit?
 
   private
   def application_params

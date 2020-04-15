@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :candidates
   resources :companies
   resources :positions
-  resources :applications, only: [:show, :new, :create]
+  resources :applications, only: [:show, :new, :create, :index]
 
   get "/sessions/login", to: "sessions#new", as: "login"
   post "/sessions", to: "sessions#create", as: "sessions"
