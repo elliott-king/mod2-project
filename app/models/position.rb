@@ -39,10 +39,22 @@ class Position < ActiveRecord::Base
     end.uniq
   end
 
-  def self.search_skill(skill)
-    self.all.select do|position|
-      position.description.downcase.include?(skill.downcase)
+  def self.search_text(keywords)
+    keywords = keywords.split(" ")
+    self.all.select do |position|
+      keywords.all? do |kw|
+        position.description.downcase.include? kw.downcase
+      end
     end.uniq
+  end
+
+  def self.search_all(keywords)
+    keywords = keywords.split(" ")
+    self.all.select do |position|
+      search_text = position.description + position.title + position.location + position.company.name 
+      search_text = search_text.downcase 
+      keywords.all? { |kw| search_text.include? kw.downcase}
+    end
   end
 
   def self.max_by_location

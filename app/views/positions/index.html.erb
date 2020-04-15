@@ -1,3 +1,10 @@
+<h1>Jobs</h1>
+<%= form_tag positions_path, method: "get" do |fb| %>
+  <%= label_tag :query, "Search for Jobs" %>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
 <ul>
 <% @positions.each do |p| %>
   <li>

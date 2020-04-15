@@ -1,6 +1,10 @@
 class PositionsController < ApplicationController
   def index
-    @positions = Position.all 
+    if params[:query]
+      @positions = Position.search_all(params[:query])
+    else
+      @positions = Position.all 
+    end
   end
 
   def show
