@@ -3,7 +3,7 @@ class CandidatesController < ApplicationController
   before_action :candidate_match, only: [:show, :edit, :destroy, :update]
 
   def index
-    @candidates = Candidate.all 
+    redirect_to candidate_path(current_candidate)
   end
 
   def new
