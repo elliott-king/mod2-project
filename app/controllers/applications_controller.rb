@@ -1,4 +1,7 @@
 class ApplicationsController < ApplicationController
+
+  before_action :candidate_match, only: [:show, :edit, :destroy, :update]
+
   def show
     @application = Application.find(params[:id])
   end
@@ -22,4 +25,13 @@ class ApplicationsController < ApplicationController
   def application_params
   params.require(:application).permit(:candidate_id, :position_id)
   end
+
+  def candidate_match
+    @application = Application.find(params[:id])
+    if current_candidate != @application.candidate
+      flash[:errors] = ["You can only view your applications"]
+      redirect_to candidate_path(current_candidate)
+    end
+  end
+
 end

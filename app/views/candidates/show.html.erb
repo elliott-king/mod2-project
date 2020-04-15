@@ -1,3 +1,11 @@
+<% if flash[:errors] %>
+<ul>
+    <% flash[:errors].each do |e| %>
+        <li><%= e %></li>
+    <% end %>
+</ul>
+<% end %>
+
 <h1><%= @candidate.name %></h1>
 <p><%= @candidate.education_level%> <%= @candidate.gpa %></p>
 <br>

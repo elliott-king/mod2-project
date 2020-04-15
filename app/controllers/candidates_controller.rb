@@ -1,12 +1,11 @@
 class CandidatesController < ApplicationController
   skip_before_action :authorized, only: [:new, :create]
+  before_action :candidate_match, only: [:show, :edit, :destroy, :update]
 
   def index
     @candidates = Candidate.all 
   end
-  def show
-    @candidate = Candidate.find(params[:id])
-  end
+
   def new
     @candidate = Candidate.new 
   end
@@ -20,9 +19,7 @@ class CandidatesController < ApplicationController
       redirect_to new_candidate_path
     end
   end
-  def edit
-    @candidate = Candidate.find(params[:id])
-  end
+
   def update
     candidate = Candidate.find(params[:id])
     candidate.update(candidate_params)
@@ -41,5 +38,13 @@ class CandidatesController < ApplicationController
   private
   def candidate_params
   params.require(:candidate).permit(Candidate.column_names, :password)
+  end
+
+  def candidate_match
+    @candidate = Candidate.find(params[:id])
+    if current_candidate != @candidate
+      flash[:errors] = ["You can only view yourself"]
+      redirect_to candidate_path(current_candidate)
+    end
   end
 end
