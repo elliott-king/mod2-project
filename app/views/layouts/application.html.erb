@@ -10,10 +10,13 @@
   </head>
 
   <body>
+    <div class='banner'>
+    <div id="navbar">
      <ul>
-        <li><%= link_to 'View Positions', positions_path %></li>
-        <li><%= link_to 'View Companies', companies_path %></li>
-        <li><%= link_to 'New Applications', new_application_path %></li>
+        <li><%= link_to 'Positions', positions_path %></li>
+        <li><%= link_to 'Companies', companies_path %></li>
+        <li><%= link_to 'New Application', new_application_path %></li>
+        <li><%= link_to '🔍', new_application_path %></li>
         <% if @current_candidate %>
           <li class='right'>Hi, <%= @current_candidate.name %></li>
           <li class='right'><%= link_to "Log Out", sessions_path, method: :delete %></li>
@@ -22,6 +25,8 @@
           <li class='right'><%= link_to 'Sign-in', login_path %></li>
         <% end %>
       </ul>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
