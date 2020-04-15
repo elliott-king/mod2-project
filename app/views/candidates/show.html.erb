@@ -23,5 +23,6 @@
 <br>
 
 <%= button_to 'New Application', {controller: :applications, action: 'new'}, method: :get %>
+<%= button_to 'View all Open Positions', {controller: :positions, action: 'index'}, method: :get %>
 <%= button_to 'Edit Candidate', {controller: :candidates, action: 'edit', id: @candidate.id}, method: :get %>
 <%= button_to 'Delete Candidate', {controller: :candidates, action: 'destroy', id: @candidate.id}, method: :delete %>
