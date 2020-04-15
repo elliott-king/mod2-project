@@ -11,7 +11,7 @@ class ApplicationsController < ApplicationController
     @positions = Position.all
   end
   def create
-    application = Application.create(application_params)
+    application = Application.create(position_id: params[:application][:position_id], candidate_id: current_candidate.id) 
     if application.valid? 
       redirect_to application_path(application)
     else
@@ -23,7 +23,7 @@ class ApplicationsController < ApplicationController
 
   private
   def application_params
-  params.require(:application).permit(:candidate_id, :position_id)
+    params.require(:application).permit(:position_id)
   end
 
   def candidate_match
