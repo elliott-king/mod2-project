@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mod2Project</title>
+    <title>Mango Jobs</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,18 @@
   </head>
 
   <body>
+     <ul>
+        <li><%= link_to 'View Positions', positions_path %></li>
+        <li><%= link_to 'View Companies', companies_path %></li>
+        <li><%= link_to 'New Applications', new_application_path %></li>
+        <% if @current_candidate %>
+          <li class='right'>Hi, <%= @current_candidate.name %></li>
+          <li class='right'><%= link_to "Log Out", sessions_path, method: :delete %></li>
+        <% else %>
+          <li class='right'><%= link_to 'Sign-up', new_candidate_path %></li>
+          <li class='right'><%= link_to 'Sign-in', login_path %></li>
+        <% end %>
+      </ul>
     <%= yield %>
   </body>
 </html>
