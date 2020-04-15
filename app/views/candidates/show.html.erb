@@ -7,6 +7,7 @@
 <% end %>
 
 <h1><%= @candidate.name %></h1>
+<%= render 'logout'%>
 <p><%= @candidate.education_level%> <%= @candidate.gpa %></p>
 <br>
 <h4>Languages:</h4>
@@ -21,10 +22,6 @@
 <% end %>
 <br>
 
-<%# todo: limit depending on login %>
-<%= link_to 'Edit Candidate', edit_candidate_path %>
-<br>
+<%= button_to 'New Application', {controller: :applications, action: 'new'}, method: :get %>
+<%= button_to 'Edit Candidate', {controller: :candidates, action: 'edit', id: @candidate.id}, method: :get %>
 <%= button_to 'Delete Candidate', {controller: :candidates, action: 'destroy', id: @candidate.id}, method: :delete %>
-<br>
-<%= link_to 'New Application', new_application_path %>
-<%= render 'logout'%>
