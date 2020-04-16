@@ -1,26 +1,31 @@
-<h4>Company Info</h4>
+<div class="link-container">
+    <%= link_to '🔙See all companies', companies_path %>
+</div>
 
-<% if @company.url %>
-    <p>Name: <a href="<%= @company.url %>"><%= @company.name %></a></p>
-    
-<% else %>
+<div class="position-title">
     <p><%= @company.name %></p>
-<% end %>
+</div>
 
-<% if @company.company_logo %>
-    <p>Logo:</p>
-    <img src="<%= @company.company_logo %>" alt="Company logo">
-<% end %>
+<div class="position-container">
+    <% if @company.company_logo %>
+        <img class="show-img" src="<%= @company.company_logo %>" alt="Company logo">
+    <% end %><br>
+    
+    <br>
+    <% if @company.url %>
+        <p><strong>URL: </strong><a href="<%= @company.url %>"><%= @company.url %></a></p>
+    <% end %><br>
 
 
-<% if !@company.positions.empty? %>
-    <p><strong>Positions: </strong></p>
-    <% @company.positions.each do |p| %>
-        <ul>
-            <li><%= link_to p.title, position_path(p) %>
-        </ul>
+    <% if !@company.positions.empty? %>
+        <p><strong>Positions: </strong></p><br>
+        <% @company.positions.each do |p| %>
+            <ul>
+                <li><%= link_to p.title, position_path(p) %></li><br>
+            </ul>
+        <% end %>
     <% end %>
-<% end %>
 
-<%= link_to 'Back to company list', companies_path %>
+</div>
+
 
