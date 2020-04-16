@@ -4,4 +4,5 @@
    is applying to 
    <%= link_to @application.position.title, position_path(@application.position) %>
 </p>
+<div class="candidate-subheader"><h2>Application Status</h2></div>
 <p>Application status: <%= @application.submitted ? "Submitted" : "Not Submitted"%></p>
