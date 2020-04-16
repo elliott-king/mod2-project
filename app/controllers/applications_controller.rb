@@ -22,6 +22,12 @@ class ApplicationsController < ApplicationController
       redirect_to new_application_path
     end
   end
+  def update
+    application = Application.find(params[:id])
+    application.submitted = true
+    application.save
+    redirect_to application_path(application)
+  end
 
   private
   def application_params

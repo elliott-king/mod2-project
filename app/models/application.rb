@@ -2,7 +2,7 @@ class Application < ActiveRecord::Base
     belongs_to :candidate 
     belongs_to :position
 
-    validate :no_duplicates
+    validate :no_duplicates, on: :create
 
     private 
     def no_duplicates
