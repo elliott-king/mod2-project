@@ -6,15 +6,27 @@
 </ul>
 <% end %>
 
-<h1><%= @candidate.name %></h1>
-<%= render 'logout'%>
-<p><%= @candidate.education_level%> <%= @candidate.gpa %></p>
-<br>
-<h4>Languages:</h4>
+<div class="candidate-header">
+  <h1><%= @candidate.name %></h1>
+  <ul class="candidate-meta">
+    <li>
+      <h3>Education Level</h3>
+      <%= @candidate.education_level%>
+    </li>
+    <li>
+      <h3>GPA</h3>
+      <%= @candidate.gpa %>
+    </li>
+  </ul>
+</div>
+<div class="candidate-subheader"><h2>Languages</h2></div>
 <p><%= @candidate.native_language %></p>
 <p><%= @candidate.second_language %></p>
 <br>
-<h4>Applications:</h4>
+<%= button_to 'Edit Profile', {controller: :candidates, action: 'edit', id: @candidate.id}, method: :get %>
+<%= button_to 'Delete Profile', {controller: :candidates, action: 'destroy', id: @candidate.id}, method: :delete %>
+<div class="candidate-subheader"><h2>Applications</h2></div>
+
 <% @candidate.applications.each do |app| %>
   <p>
   <%= link_to app.position.title, application_path(app) %>
@@ -23,6 +35,3 @@
 <br>
 
 <%= button_to 'New Application', {controller: :applications, action: 'new'}, method: :get %>
-<%= button_to 'View all Open Positions', {controller: :positions, action: 'index'}, method: :get %>
-<%= button_to 'Edit Candidate', {controller: :candidates, action: 'edit', id: @candidate.id}, method: :get %>
-<%= button_to 'Delete Candidate', {controller: :candidates, action: 'destroy', id: @candidate.id}, method: :delete %>

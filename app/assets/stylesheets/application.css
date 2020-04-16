@@ -81,7 +81,7 @@ img {
     /* background-color: lightgrey; */
     background-color: rgba(156, 201, 228, 0.4);
 }
-  
+/*   
 .show-body, form, h1, ol {
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 20px;
@@ -91,7 +91,7 @@ img {
     padding: 2.25%; 
     width: 85%;
   
-     /* font-family: molle; */
+     /* font-family: molle; 
     text-align: center;
     vertical-align: middle;
     border-radius: 20px;
@@ -105,7 +105,7 @@ input {
     margin: 10px 0px;
 }
   
-  
+   */
   /* nvaigation bar */
   /*
 ul li {
@@ -150,7 +150,42 @@ a {
     float: right;
 }
 
+.candidate-header {
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: row;
+}
 
+.candidate-header h1 {
+    display: inline-flex;
+    flex-grow: 1;
+    vertical-align: middle;
+    margin: auto 0 auto 10%;
+}
 
+.candidate-header ul {
+    display: inline-flex;
+    margin-right: 2.5%;
+    border-radius: 10px;
+    background-color: #e4dcee;
+    padding: 1% 2.5%;
+}
 
+.candidate-header li {
+    list-style: none;
+    padding: inherit;
+}
 
+.candidate-header li h3 {
+    height: 40%;
+}
+
+.candidate-subheader {
+    background-color: #e4dcee;
+    text-align: center;
+}
+
+.candidate-subheader h2 {
+    display: inline-block;
+    vertical-align: middle;
+}
