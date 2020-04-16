@@ -307,3 +307,21 @@ a {
     display: inline-block;
     vertical-align: middle;
 }
+
+.app-container {
+    display: flex;
+}
+
+.app-p-container {
+    flex: 1;
+}
+
+.app-link-right {
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+}
+
+.app-link {
+    align-self: flex-end;
+}

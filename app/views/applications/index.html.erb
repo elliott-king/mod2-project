@@ -1,9 +1,23 @@
 <div class="candidate-subheader"><h2>Current Applications</h2></div>
 
 <% @applications.each do |app| %>
-  <p>
-  <%= link_to app.position.title, application_path(app) %>
-  </p>
+  <div class="app-container">
+    <div class="app-p-container">
+      <div class="p-index-title">
+        <%= link_to app.position.title, position_path(app.position) %>
+      </div>
+      <div class="p-subtitle">
+        <%= app.position.location %> | <%= app.position.created_at %>
+      </div>
+    </div>
+    <div class="app-link-right">
+      <div class="app-link">
+        <div class="p-subtitle">
+          <%= link_to "Application Status", application_path(app) %>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
 
 <%= button_to 'New Application', {controller: :applications, action: 'new'}, method: :get %>
