@@ -1,17 +1,18 @@
-<div class="position-container">
-<%= form_tag positions_path, method: "get" do |fb| %>
-  <%= label_tag :query, "Search for Jobs" %>
-  <%= text_field_tag :query, params[:query] %>
-  <%= submit_tag "Search" %>
-<% end %>
-
-<ul>
-<% @positions.each do |p| %>
-  
-    <% message = "#{p.title}: #{p.location}" %>
-    <li><%= link_to message, position_path(p) %></li><br>
-  
-<% end %>
-</ul>
-
+<div class="search-container">
+    <%= form_tag positions_path, method: "get" do |fb| %>
+    <%= label_tag :query, "Search for Jobs" %>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search" %>
+    <% end %>
 </div>
+
+    <% @positions.each do |p| %>
+        <div class="p-index-title">
+            <%= link_to p.title, position_path(p) %>
+        </div>
+        <div class='p-subtitle'>
+            <%= p.location%> | <%= p.created_at %>
+        </div>
+    
+    <% end %>
+

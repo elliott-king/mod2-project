@@ -78,6 +78,13 @@ img {
     
 }
 
+.position-container form {
+    margin: 20px 20px 15px 50px;
+    font-size: 25px;
+    color: rgb(172, 107, 10);
+    font: 1em sans-serif;
+}
+
 
 .company-container {
     border-radius: 25px;
@@ -115,7 +122,6 @@ img {
     font: 1em sans-serif;
     border-bottom: 1px solid #ddd;
     
-    
 }
 .position-title p {
     color: #294455;
@@ -127,6 +133,36 @@ img {
     color: rgb(79, 123, 182);
     margin: 5px 100px 5px 100px;
     font-size: 50px;
+    font: 1em sans-serif;
+}
+
+.p-index-title {
+    margin: 20px 100px 5px 100px;
+    padding-bottom: 0px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.p-index-title a {
+    
+    font: 1em sans-serif;
+    color: rgb(79, 123, 182);
+    text-decoration: none
+    
+}
+
+.p-subtitle {
+    color: rgb(110, 114, 119);
+    margin: 5px 100px 5px 100px;
+    font-size: 50px;
+    font: 1em sans-serif;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-container {
+    margin: 20px 20px 15px 100px;
+    font-size: 25px;
+    color: rgb(172, 107, 10);
     font: 1em sans-serif;
 }
 
