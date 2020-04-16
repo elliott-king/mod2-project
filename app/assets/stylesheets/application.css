@@ -74,10 +74,14 @@ body {
     font-weight: 500;
     display: inline-block;
     padding: 15px;
-    margin: 10px 80px 0px 20px;
+    margin: 10px 80px 0px 31px;
     background-color: rgba(255, 255, 255, 0.7);
     vertical-align: middle;
     border-radius: 20px;
+}
+
+#banner a{
+    text-decoration: none;
 }
 
 #banner li:hover{
