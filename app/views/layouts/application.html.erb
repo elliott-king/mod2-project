@@ -15,7 +15,12 @@
         <li><%= link_to 'Positions', positions_path %></li>
         <li><%= link_to 'Companies', companies_path %></li>
         <li><%= link_to 'New Application', new_application_path %></li>
-        <li><%= link_to '🔍', new_application_path %></li>
+        <li>
+        <%= form_tag positions_path, method: "get" do |fb| %>
+          <%= text_field_tag :query, params[:query] %>
+          <%= submit_tag "🔍" %>
+        <% end %>
+        </li>
         <% if @current_candidate %>
           <% m = "Hi, " + @current_candidate.name %>
           <li><%= link_to m, candidate_path(@current_candidate) %>
