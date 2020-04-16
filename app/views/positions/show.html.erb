@@ -32,7 +32,10 @@
     <%= @position.description %>
     </p>
    
-
+    <%= button_to(
+        "Apply to This Position", 
+        {controller: :applications, action: :create, "application[position_id]" => @position.id}, 
+        method: :post)
+    %>
     <br>
 </div>
-<%# TODO: add company info%>
