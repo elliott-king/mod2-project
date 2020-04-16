@@ -1,15 +1,11 @@
-<h1>Jobs</h1>
-<%= form_tag positions_path, method: "get" do |fb| %>
-  <%= label_tag :query, "Search for Jobs" %>
-  <%= text_field_tag :query, params[:query] %>
-  <%= submit_tag "Search" %>
-<% end %>
-
+<div class="position-container">
 <ul>
 <% @positions.each do |p| %>
-  <li>
+  
     <% message = "#{p.title}: #{p.location}" %>
-    <%= link_to message, position_path(p) %>
-  </li>
+    <li><%= link_to message, position_path(p) %></li><br>
+  
 <% end %>
 </ul>
+
+</div>
