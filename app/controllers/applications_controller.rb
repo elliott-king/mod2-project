@@ -14,8 +14,8 @@ class ApplicationsController < ApplicationController
     @positions = Position.all
   end
   def create
-    application = Application.create(position_id: params[:application][:position_id], candidate_id: current_candidate.id) 
-    if application.valid? 
+    application = Application.new(position_id: params[:application][:position_id], candidate_id: current_candidate.id) 
+    if application.save
       redirect_to application_path(application)
     else
       flash[:errors] = application.errors.full_messages
