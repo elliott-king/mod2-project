@@ -1,5 +1,13 @@
 class SessionsController < ApplicationController
-  skip_before_action :authorized, only: [:new, :create]
+  skip_before_action :authorized, only: [:new, :create, :index]
+
+  def index
+    @positions = nil
+    @current_candidate = current_candidate
+    if current_candidate && session[:recent_search]
+      @positions = Position.search_all(session[:recent_search])
+    end
+  end
 
   def new
   end

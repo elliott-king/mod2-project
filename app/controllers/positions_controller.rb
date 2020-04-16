@@ -1,9 +1,10 @@
 class PositionsController < ApplicationController
   def index
     if params[:query]
+      session[:recent_search] = params[:query]
       @positions = Position.search_all(params[:query])
     else
-      @positions = Position.all 
+      @positions = Position.all
     end
   end
 

@@ -1,0 +1,22 @@
+<div class="position-container">
+  <p><strong>Welcome</strong></p>
+  <p>Use mango™ jobs to search a database of current job openings around the world.</p>
+  <p>This application utilizes the GitHub Jobs api. <a href="https://jobs.github.com/api">Click here to learn more about it.</a></p>
+
+  <% if @current_candidate %>
+    <%= form_tag positions_path, method: "get" do |fb| %>
+    <%= label_tag :query, "Search for Jobs" %>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search" %>
+    <% end %>
+
+    <% if @positions %>
+      <ul>
+        <% @positions.each do |p| %>
+        <li><%= link_to p.title, position_path(p) %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+
+</div>
