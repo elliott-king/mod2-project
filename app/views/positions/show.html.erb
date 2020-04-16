@@ -1,28 +1,38 @@
-<h2>Position Info</h2>
+<div class="link-container">
+    <%= link_to '🔙See all positions', positions_path %>
+</div>
 
-<h4>Title</h4>
-<%= @position.title %>
-<br>
+<div class='subtitle'>
+    <%= @position.position_type %>
+</div>
+<div class="position-title">
+    <p><%= @position.title.capitalize()%></p>
+</div>
 
-<h4>Company</h4>
-<%= link_to @position.company.name, company_path(@position.company) %>
-<br>
+<div class="position-container">
 
-<h4>Location</h4>
-<%= @position.location %>
-<br>
-<h4>Created at</h4>
-<%= @position.created_at %>
-<br>
-<h4>Description</h4>
-<%= @position.description %>
-<br>
-<h4>Url</h4>
-<a href="<%= @position.url %>"><%= @position.url %></a>
-<br>
-<h4>Apply at</h4>
-<a href="<%= @position.how_to_apply %>"><%= @position.how_to_apply %></a>
-<br>
+    <p><strong>Company: </strong>
+    <%= link_to @position.company.name, company_path(@position.company) %>
+    </p>
 
-<br>
+    <p><strong>Location: </strong>
+    <%= @position.location %>
+    </p>
+    <p><strong>Created at: </strong>
+    <%= @position.created_at %>
+    </p>
+    <p><strong>Url: </strong>
+    <a href="<%= @position.url %>"><%= @position.url %></a>
+    </p>
+    <p><strong>Apply at: </strong>
+    <a href="<%= @position.how_to_apply %>"><%= @position.how_to_apply %></a>
+    </p>
+    <p><strong>Description</strong><br>
+    <br>
+    <%= @position.description %>
+    </p>
+   
+
+    <br>
+</div>
 <%# TODO: add company info%>
