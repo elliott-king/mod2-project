@@ -14,7 +14,7 @@ class CandidatesController < ApplicationController
     candidate = Candidate.create(candidate_params)
     # byebug
     if candidate.valid? 
-      redirect_to candidate_path(candidate)
+      redirect_to login_path
     else
       flash[:errors] = candidate.errors.full_messages
       redirect_to new_candidate_path
